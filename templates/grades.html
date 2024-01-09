@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}Grades{% endblock %}
+
+{% block content %}
+<h2>Grades Page</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            {%for head in grades[0]%}
+            <th>{{head}}</th>
+            {%endfor%}
+        </tr>
+        </thead>
+        <tbody>
+        {%for sub in grades[1:]%}
+        <tr>
+            {%for i in sub%}
+            <td>{{i}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+        <tbody>
+    </table>
+</div>
+{% endblock %}

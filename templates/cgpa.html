@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}CGPA{% endblock %}
+
+{% block content %}
+<h2>CGPA Page</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            {%for head in cgpa[0]%}
+            <th>{{head}}</th>
+            {%endfor%}
+        </tr>
+        </thead>
+        <tbody>
+        {%for cg in cgpa[1:]%}
+        <tr>
+            <td><a href="{{url_for('cgpa_detail',cgpa_id=cg[0])}}">{{cg[0]}}</a></td>
+            <!-- <td>{{cg[0]}}</td> -->
+            {%for i in cg[1:]%}
+            <td>{{i}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+        <tbody>
+    </table>
+</div>
+{% endblock %}

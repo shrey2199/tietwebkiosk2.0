@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<h2>Results Page</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            {%for head in results[0]%}
+            <th>{{head}}</th>
+            {%endfor%}
+        </tr>
+        </thead>
+        <tbody>
+        {%for res in results[1:]%}
+        <tr>
+            {%for i in res%}
+            <td>{{i}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+        <tbody>
+    </table>
+</div>
+{% endblock %}

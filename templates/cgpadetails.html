@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}CGPA Details{% endblock %}
+
+{% block content %}
+<h2>{{cgpa_id}} CGPA Details</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            {%for head in cgpa[0]%}
+            <th>{{head}}</th>
+            {%endfor%}
+        </tr>
+        </thead>
+        <tbody>
+        {%for cg in cgpa[1:-1]%}
+        <tr>
+            {%for i in cg%}
+            <td>{{i}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+        <tbody>
+    </table>
+    <h2>
+        {{", ".join(cgpa[-1][-1].split("    "))}}
+    </h2>
+</div>
+{% endblock %}

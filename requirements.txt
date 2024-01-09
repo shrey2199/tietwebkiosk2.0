@@ -1,0 +1,6 @@
+requests
+html-table-parser-python3
+prettytable
+flask
+gunicorn
+flask-talisman
