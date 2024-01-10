@@ -7,6 +7,7 @@ from seatingPlan import getSeatingPlan
 from examMarks import getExamMarks
 from examGrades import getExamGrades
 from cgpa import getCgpa
+from getpass import getpass
 
 # Main Menu
 
@@ -59,7 +60,7 @@ while True:
     session = requests.Session()
 
     enrolNum = input("Enter Roll Number: ")
-    passWd = input("Enter Password/PIN: ")
+    passWd = getpass("Enter Password/PIN: ")
 
     session, logSuccess = loginAction(enrolNum, passWd, session)
 
